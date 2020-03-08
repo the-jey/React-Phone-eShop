@@ -11,9 +11,12 @@ export default class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct ,
-    cart: [],
+    cart: storeProducts,
     modalOpen: false,
-    modalProduct: detailProduct
+    modalProduct: detailProduct,
+    cartSubTotal: 10,
+    cartTax: 20,
+    cartTotal: 50
   };
 
   // Start the Set Product Function
@@ -78,6 +81,26 @@ export default class ProductProvider extends Component {
     })
   }
 
+  // Increment and Decrement method
+  increment = (id) => {
+
+  }
+  decrement = (id) => {
+
+  }
+
+  // RemoveItem method
+  removeItem = (id) => {
+
+  }
+
+  // Clear Cart function
+  clearCart = () => {
+
+  }
+
+
+
   render() {
     return (
       <ProductContext.Provider value={{
@@ -85,7 +108,11 @@ export default class ProductProvider extends Component {
         handleDetail: this.handleDetail,
         addToCart: this.addToCart,
         openModal: this.openModal,
-        closeModal: this.closeModal
+        closeModal: this.closeModal,
+        increment: this.increment,
+        decrement: this.decrement,
+        removeItem: this.removeItem,
+        clearCart: this.clearCart
       }}>
         {this.props.children}
       </ProductContext.Provider>
