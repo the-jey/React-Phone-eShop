@@ -6,7 +6,8 @@ export const ButtonContainer = styled.button`
   font-size: 1.4rem;
   background: transparent;
   border: 0.05rem solid var(--lightBlue);
-  color: var(--lightBlue);
+  border-color: ${props => (props.cart ? 'var(--mainYellow)' : 'var(--lightBlue)')};
+  color: ${props => (props.cart ? 'var(--mainYellow)' : 'var(--lightBlue)')};
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
@@ -15,7 +16,7 @@ export const ButtonContainer = styled.button`
 
   /*We can make property like in SCSS*/
   &:hover {
-    background: var(--lightBlue);
+    background: ${props => (props.cart ? 'var(--mainYellow)' : 'var(--lightBlue)')};
     color: var(--mainBlue);
   }
   &:focus {
